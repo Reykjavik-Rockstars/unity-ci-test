@@ -18,19 +18,19 @@ notifications:
 
 # decrypt the encrypted SSH key file so it can be used for scp auth in post_build.sh
 before_install:
-- openssl aes-256-cbc -k "$KEYFILE_PASS" -in "${UPLOAD_KEYPATH}.enc" -out "${UPLOAD_KEYPATH}" -d
+#- openssl aes-256-cbc -k "$KEYFILE_PASS" -in "${UPLOAD_KEYPATH}.enc" -out "${UPLOAD_KEYPATH}" -d
 
 # run the script to download and install Unity editor
 install:
-- sudo -E sh ./Scripts/install.sh
+- sh ./Scripts/install.sh
 
 # run the script for unit tests and builds
 script:
-- sudo -E sh ./Scripts/build.sh
+- sh ./Scripts/build.sh
 
 # run the script to upload the builds as tarballs
 after_success:
-- sudo -E sh ./Scripts/post_build.sh
+- sh ./Scripts/post_build.sh
 
 # environment variables used in bash scripts
 env:
