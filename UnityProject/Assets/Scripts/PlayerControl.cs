@@ -56,7 +56,7 @@ public class PlayerControl : MonoBehaviour {
 
 	internal void incToken() {
 		numTokens += 1;
-		health += 20.0;
+		health += 50.0;
 		if (GotToken != null) {
 			GotToken (this.gameObject, new GotTokenEvent { currentNumberTokens = this.numTokens } );
 		}
