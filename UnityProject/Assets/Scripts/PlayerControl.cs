@@ -13,10 +13,10 @@ public class PlayerControl : MonoBehaviour {
 
 	public float moveForce;
 	public float jumpForce;
+	private float health;
 
 	private bool grounded;
 	private int numTokens;
-	private double health;
 
 	// Use this for initialization
 	void Start () {
