@@ -16,6 +16,7 @@ public class PlayerControl : MonoBehaviour {
 
 	private bool grounded;
 	private int numTokens;
+	private double health;
 
 	// Use this for initialization
 	void Start () {
@@ -55,6 +56,7 @@ public class PlayerControl : MonoBehaviour {
 
 	internal void incToken() {
 		numTokens += 1;
+		health += 20.0;
 		if (GotToken != null) {
 			GotToken (this.gameObject, new GotTokenEvent { currentNumberTokens = this.numTokens } );
 		}
