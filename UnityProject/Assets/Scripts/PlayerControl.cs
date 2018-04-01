@@ -13,7 +13,6 @@ public class PlayerControl : MonoBehaviour {
 
 	public float moveForce;
 	public float jumpForce;
-	private float health;
 
 	private bool grounded;
 	private int numTokens;
@@ -56,7 +55,6 @@ public class PlayerControl : MonoBehaviour {
 
 	internal void incToken() {
 		numTokens += 1;
-		health += 50.0;
 		if (GotToken != null) {
 			GotToken (this.gameObject, new GotTokenEvent { currentNumberTokens = this.numTokens } );
 		}
